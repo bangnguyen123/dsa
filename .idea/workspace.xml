@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8558bae-9c5a-4a58-a55b-c9733b4b2f84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/array/DynamicArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/array/Test.java" afterDir="false" />
+    <list default="true" id="f8558bae-9c5a-4a58-a55b-c9733b4b2f84" name="Changes" comment="Array-Dynamic Array Implementation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +74,32 @@
       <option name="presentableId" value="Default" />
       <updated>1674237218220</updated>
       <workItem from="1674237219693" duration="1832000" />
-      <workItem from="1674239061250" duration="10575000" />
+      <workItem from="1674239061250" duration="11948000" />
     </task>
+    <task id="LOCAL-00001" summary="git commit init">
+      <created>1674399443649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674399443649</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Array-Dynamic Array Implementation">
+      <created>1674399504866</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674399504866</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git commit init" />
+    <MESSAGE value="Array-Dynamic Array Implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Array-Dynamic Array Implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
