@@ -84,7 +84,7 @@ public class DefaultDoublyLinkedList<T> implements DoublyLinkedList<T> {
     @Override
     public T removeLast() {
         T data = tail.getData();
-        tail = tail.getNext();
+        tail = tail.getPrev();
         size--;
         if(isEmpty()) head = null;
         else tail.setNext(null);
