@@ -21,6 +21,17 @@ class DynamicArray:
         if not 0 <= index <= self._capacity:
             raise IndexError('invalid index')
         return self._A[index]
+
+    def __str__(self) -> str:
+        if self._element == 0:
+            return "[]"
+        result = []
+        result.append("[")
+        for i in self._A:
+            result.append(i)
+            result.append(",")
+        result.append("]")
+        return ''.join(result)
     
     def append(self, obj):
         if self._element == self._capacity:
@@ -40,3 +51,5 @@ class DynamicArray:
 
 if __name__ == '__main__':
     dynamic_array = DynamicArray()
+    dynamic_array.append('bang')
+    print(dynamic_array)
