@@ -33,16 +33,16 @@ class DynamicArray:
         result.append("]")
         return ''.join(result)
 
-    def is_empty(self):
+    def is_empty(self): #O(1)
         return True if self._element == 0 else False
     
-    def append(self, obj):
+    def append(self, obj): #O(1)
         if self._element == self._capacity:
             self._resize()
         self._A[self._element] = obj
         self._element += 1
 
-    def insert(self, index, value):
+    def insert(self, index, value): #O(n-index)
         if self._element == self._capacity:
             self._resize()
         if index < 0:
@@ -54,19 +54,28 @@ class DynamicArray:
         self._A[index] = value
         self._element += 1
 
-    def pop(self):
+    def pop(self): #O(1)
         self._A[self._element - 1] = None
         self._element -= 1
     
-    def pop(self, index):
+    def pop(self, index): #O(n-index)
         if 0 <= index <= self._element - 1 is False:
             raise IndexError('invalid index')
-        self._A[index] = None
         for i in range(index, self._element - 1):
             self._A[i] = self._A[i+1]
+        self._A[self._element] = None
         self._element -= 1
 
-    
+    def remove(self, value):
+        for i in range(0, self._element):
+            if self._A[i] == value:
+                for j in range(i, self._element - 1):
+                    self._A[j] = self._A[j+1]
+                self._A[self._element] = None
+                self._element -= 1
+                return
+        raise ValueError("value not found")
+
     def _make_array(self, capacity):
         return (capacity * ctypes.py_object)()
     
@@ -82,7 +91,8 @@ if __name__ == '__main__':
     for idx in range(13):
         dynamic_array.append(idx)
     dynamic_array.insert(20, "bang")
-    dynamic_array.pop(0)
-    dynamic_array.pop(0)
-    dynamic_array.pop(0)
+    # dynamic_array.pop(0)
+    # dynamic_array.pop(0)
+    # dynamic_array.pop(0)
+    dynamic_array.remove(8)
     print(dynamic_array)
