@@ -32,6 +32,9 @@ class DynamicArray:
             result.append(",")
         result.append("]")
         return ''.join(result)
+
+    def is_empty(self):
+        return True if self._element == 0 else False
     
     def append(self, obj):
         if self._element == self._capacity:
@@ -50,6 +53,19 @@ class DynamicArray:
             self._A[i] = self._A[i-1]
         self._A[index] = value
         self._element += 1
+
+    def pop(self):
+        self._A[self._element - 1] = None
+        self._element -= 1
+    
+    def pop(self, index):
+        if 0 <= index <= self._element - 1 is False:
+            raise IndexError('invalid index')
+        self._A[index] = None
+        for i in range(index, self._element - 1):
+            self._A[i] = self._A[i+1]
+        self._element -= 1
+
     
     def _make_array(self, capacity):
         return (capacity * ctypes.py_object)()
@@ -64,6 +80,9 @@ class DynamicArray:
 if __name__ == '__main__':
     dynamic_array = DynamicArray()
     for idx in range(13):
-        dynamic_array.append('bang')
-    dynamic_array.insert(8, 10000)
+        dynamic_array.append(idx)
+    dynamic_array.insert(20, "bang")
+    dynamic_array.pop(0)
+    dynamic_array.pop(0)
+    dynamic_array.pop(0)
     print(dynamic_array)
