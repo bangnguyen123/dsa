@@ -5,7 +5,7 @@ function isPrime(n) {
     if (n < 1) {
         return false
     }
-    if (n == 3 || n == 2) {
+    if (n == 3 || n == 2 || n == 5) {
         return true
     }
 
