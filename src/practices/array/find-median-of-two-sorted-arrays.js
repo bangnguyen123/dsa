@@ -32,9 +32,6 @@ function findMedianTwoSortedArrays(arr1, arr2) {
         let partition1 = Math.floor((low + high) / 2)
         let partition2 = Math.floor((combinedLength )/2) - partition1
 
-        console.log(partition1, partition2)
-
-
         let leftElement1 = getMax(arr1, partition1)
         let rightElement1 = getMin(arr1, partition1)
         let leftElement2 = getMax(arr2, partition2)
