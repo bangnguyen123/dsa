@@ -1,7 +1,8 @@
 """
 An easy method to encrypt your message
-- replace each letter i with the letter (i + r) mod 26
-- 
+- replace each letter i with the letter (i + r) mod 26 (limit for the upper case)
+- chr(number) -> get the character that represents the unicode 97 
+- ord() -> return the integer that represents the charactor "A"
 """
 
 class CaesarCipler:
