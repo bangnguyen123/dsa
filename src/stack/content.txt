@@ -1,0 +1,4 @@
+bang3
+bang2
+bang1
+bang
