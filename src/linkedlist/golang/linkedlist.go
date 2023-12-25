@@ -47,10 +47,24 @@ func (linkedList LinkedList) AddTail(property int) {
 	}
 }
 
+func (linkedList LinkedList) IndexOf(property int) int {
+	var node *Node
+	index := 0
+	for node = linkedList.headNode; node != nil; node = node.nextNode {
+		if node.property == property {
+			return index
+		}
+		index += index
+	}
+	return -1
+}
+
 func main() {
 	linkedList := LinkedList{}
 	linkedList.AddToHead(1)
 	linkedList.AddToHead(3)
+	linkedList.AddTail(5)
 	fmt.Print(linkedList.Tail())
 	fmt.Println(linkedList.headNode.property)
+	fmt.Println(linkedList)
 }
