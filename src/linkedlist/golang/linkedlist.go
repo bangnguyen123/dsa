@@ -7,6 +7,17 @@ type Node struct {
 	nextNode *Node
 }
 
+type SinglyLinkedList interface {
+	AddToHead()
+	AddTail()
+	Interate()
+	Tail() *Node
+	IndexOf() int
+	Contains() bool
+	RemoveAt()
+	Removes()
+}
+
 type LinkedList struct {
 	headNode *Node
 }
@@ -14,9 +25,7 @@ type LinkedList struct {
 func (linkedList *LinkedList) AddToHead(property int) {
 	var node = Node{}
 	node.property = property
-	if node.nextNode != nil {
-		node.nextNode = linkedList.headNode
-	}
+	node.nextNode = linkedList.headNode
 	linkedList.headNode = &node
 }
 
@@ -37,7 +46,7 @@ func (linkedList *LinkedList) Tail() *Node {
 	return tail
 }
 
-func (linkedList LinkedList) AddTail(property int) {
+func (linkedList *LinkedList) AddTail(property int) {
 	node := &Node{}
 	node.property = property
 	node.nextNode = nil
@@ -47,24 +56,39 @@ func (linkedList LinkedList) AddTail(property int) {
 	}
 }
 
-func (linkedList LinkedList) IndexOf(property int) int {
+func (linkedList *LinkedList) IndexOf(property int) int {
 	var node *Node
 	index := 0
 	for node = linkedList.headNode; node != nil; node = node.nextNode {
 		if node.property == property {
 			return index
 		}
-		index += index
+		index = index + 1
 	}
 	return -1
+}
+
+func (linkedList *LinkedList) Contains(property int) bool {
+	return linkedList.IndexOf(property) != -1
+}
+
+func (linkedList *LinkedList) RemoveAt(index int) {
+
+}
+
+func (linkedList *LinkedList) Removes(property int) {
+
 }
 
 func main() {
 	linkedList := LinkedList{}
 	linkedList.AddToHead(1)
 	linkedList.AddToHead(3)
+	linkedList.AddToHead(2)
 	linkedList.AddTail(5)
-	fmt.Print(linkedList.Tail())
-	fmt.Println(linkedList.headNode.property)
-	fmt.Println(linkedList)
+	linkedList.AddTail(6)
+	linkedList.IterateList()
+	fmt.Println("tail", linkedList.Tail())
+	fmt.Println("index of ", linkedList.IndexOf(6))
+	fmt.Println("Contain", linkedList.Contains(7))
 }
